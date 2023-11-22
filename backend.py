@@ -13,4 +13,4 @@ def generate_numbers():
     numbers = [random.randint(1, 100) for _ in range(5)]
     return jsonify(numbers)
 
-app.run(host='0.0.0.0', port=80, debug=True)
+app.run(host='0.0.0.0', port=8301, debug=True)
