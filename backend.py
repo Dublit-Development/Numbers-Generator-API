@@ -4,11 +4,7 @@ from flask_limiter.util import get_remote_address
 from flask import make_response
 
 app = Flask(__name__)
-limiter = Limiter(
-    app,
-    key_func=get_remote_address
-)
-limiter.init_app(app)
+limiter = Limiter(app, key_func=get_remote_address)
 
 @app.route('/')
 def index():
@@ -34,5 +30,4 @@ def custom_response():
     response.headers['Content-Type'] = 'application/json'
     return response
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+app.run(host='0.0.0.0', port=5000, debug=True)
