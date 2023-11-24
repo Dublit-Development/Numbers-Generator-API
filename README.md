@@ -10,3 +10,5 @@ sudo apt-get install python3-pip
 # The following libraries need to be installed using pip:
 
 pip install Flask requests
+
+pip install Flask-Limiter
