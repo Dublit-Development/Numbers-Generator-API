@@ -15,7 +15,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/generate_numbers', methods=['POST'])
-@limiter.limit("2 per second", override_defaults=True)
+@limiter.limit("1/second", override_defaults=True)
 def generate_numbers():
     # Process the request and send random numbers back
     import random
