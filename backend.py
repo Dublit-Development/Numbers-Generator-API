@@ -6,9 +6,9 @@ from flask import make_response
 app = Flask(__name__)
 limiter = Limiter(
     app,
-    key_func=get_remote_address,
-    default_limits=["2 per second"]
+    key_func=get_remote_address
 )
+limiter.init_app(app)
 
 @app.route('/')
 def index():
