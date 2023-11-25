@@ -3,11 +3,14 @@ from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from flask import make_response
 
+"""The rate limit function is not working as intended currently. This is an experimental application. 
+The current issue could be due to a specified memory route not being explicitly set."""
+
 app = Flask(__name__)
 limiter = Limiter(
     get_remote_address,
     app=app,
-    default_limits=["200 per day", "50 per hour"]
+    default_limits=["200 per day", "50 per hour"],
 )
 
 @app.route('/')
